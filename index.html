@@ -1,267 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Literário</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Literário</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff5fb;
-            color: #333;
-        }
-
-        header {
-            background-color: rgb(253, 235, 247);
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 30px 15px;
-            border-bottom: 2px solid #f3cbec;
-        }
-
-        main {
-            background-color: rgb(255, 217, 242);
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-
-        .boas-vindas {
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .secao-resenhas {
-            margin-top: 30px;
-        }
-
-        /* O container retrátil (details) */
-        .card-livro {
-            background-color: #ffffff;
-            border: 1px solid #e1b3d7;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-
-        /* O que fica visível ANTES de clicar (summary) */
-        .resumo-livro {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            user-select: none;
-        }
-
-        .resumo-livro::-webkit-details-marker {
-            display: none;
-        }
-
-        .capa-livro {
-            width: 100px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 6px;
-            background-color: #eee;
-        }
-
-        .info-basica {
-            flex: 1;
-        }
-
-        .Um caso perdido {
-            margin: 0 0 5px 0;
-            color: #6b2d5c;
-        }
-
-        .autor-livro {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .avaliacao {
-            color: #d4a300;
-            font-weight: bold;
-        }
-
-        .dica-clique {
-            font-size: 0.85em;
-            color: #888;
-            margin-top: 10px;
-        }
-
-        /* O texto da resenha que abre ao clicar */
-        .texto-resenha {
-            padding: 20px;
-            border-top: 1px dashed #e1b3d7;
-            background-color: #fff9fc;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        @media (max-width: 600px) {
-            .resumo-livro {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#fff5fb;color:#333}
+header{text-align:center;padding:25px;background:#fdebf7;border-bottom:2px solid #f3cbec}
+header h1{margin:0 0 8px}
+header h2{margin:0;font-size:1rem;font-weight:normal}
+main{max-width:900px;margin:20px auto;padding:25px;background:#ffd9f2;border-radius:12px}
+.boas-vindas{text-align:center;font-weight:bold;font-size:1.2rem}
+hr{border:0;height:1px;background:#e1b3d7;margin:30px 0}
+.card-livro{margin-bottom:20px;background:white;border:1px solid #e1b3d7;border-radius:10px;overflow:hidden}
+.resumo-livro{display:flex;align-items:center;gap:20px;padding:15px;cursor:pointer;list-style:none}
+.resumo-livro::-webkit-details-marker{display:none}
+.capa{width:70px;height:105px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.info-basica{flex:1}
+.titulo-livro{margin:0 0 5px;color:#6b2d5c}
+.autor-livro{color:#666;font-style:italic;margin-bottom:8px}
+.avaliacao{color:#d4a300;font-weight:bold}
+.dica-clique{font-size:.85rem;color:#888;margin-top:10px}
+.texto-resenha{padding:20px;border-top:1px dashed #e1b3d7;background:#fff9fc;line-height:1.6}
+footer{text-align:center;padding:15px;color:#555;font-size:.9rem}
+@media(max-width:600px){.resumo-livro{flex-direction:column;text-align:center}}
+</style>
 </head>
 
 <body>
-    <header>  
-        <h1>Blog Literário: Olá Gostaria De Um Livro</h1>
-        <h2>por: Júlia Bonine e Beatriz Zafani</h2>
-    </header>
 
-    <main>       
-        <p class="boas-vindas">Seja bem-vindo ao nosso blog.</p>
-        
-        <section>
-            <h2>Sobre o blog</h2>
-            <p>
-                <em>"Livros não mudam o mundo. Quem muda o mundo são as pessoas. Livros só mudam as pessoas."</em>
-                (Mario Quintana) 
-            </p>
-            <p>
-                Este blog nasceu da vontade de compartilhar o amor pela leitura, indicar bons livros, comentar sobre nossos favoritos
-                e mostrar o quanto a literatura muda a nossa perspectiva sobre a vida.
-            </p>
-        </section>
+<header>
+<h1>Blog Literário: Olá, Gostaria de um Livro</h1>
+<h2>Por Júlia Bonine e Beatriz Zafani</h2>
+</header>
 
-        <hr style="border: 0; height: 1px; background: #e1b3d7; margin: 30px 0;">
+<main>
+<p class="boas-vindas">Seja bem-vindo ao nosso blog!</p>
 
-        <section class="secao-resenhas">
-            <h2>Últimas Resenhas</h2>
+<h2>Sobre o blog</h2>
+<p><em>"Livros não mudam o mundo. Quem muda o mundo são as pessoas. Livros só mudam as pessoas."</em> — Mario Quintana</p>
+<p>Este blog nasceu da vontade de compartilhar o amor pela leitura, indicar bons livros e mostrar o quanto a literatura pode mudar nossa perspectiva sobre a vida.</p>
 
-            <details class="card-livro">
-                <summary class="resumo-livro">
-                    <img class="capa-livro" src="https://via.placeholder.com/100x150" alt="Capa do livro 1">
-                    <div class="info-basica">
-                        <h3 class="titulo-livro">Um caso perdido</h3>
-                        <div class="autor-livro">Autor: Collen Hoover</div>
-                        <div class="avaliacao">Nota: ★★★★★</div>
-                        <div class="dica-clique">✨ Clique para ler a resenha completa</div>
-                    </div>
-                </summary>
-                <div class="texto-resenha">
-                    <p>Escreva aqui o texto completo da resenha do livro 1.</p>
-                </div>
-            </details>
+<hr>
 
-            <details class="card-livro">
-                <summary class="resumo-livro">
-                    <img class="capa-livro" src="https://via.placeholder.com/100x150" alt="Capa do livro 2">
-                    <div class="info-basica">
-                        <h3 class="titulo-livro">Caída por você</h3>
-                        <div class="autor-livro">Autor: Amy Lea</div>
-                        <div class="avaliacao">Nota: ★★★★☆</div>
-                        <div class="dica-clique">✨ Clique para ler a resenha completa</div>
-                    </div>
-                </summary>
-                <div class="texto-resenha">
-                    <p>Escreva aqui a resenha do livro 2.</p>
-                </div>
-            </details>
+<h2>Últimas Resenhas</h2>
 
-            <details class="card-livro">
-                <summary class="resumo-livro">
-                    <img class="capa-livro" src="https://via.placeholder.com/100x150" alt="Capa do livro 3">
-                    <div class="info-basica">
-                        <h3 class="titulo-livro">Amor, Teoricamente</h3>
-                        <div class="autor-livro">Autor: Ali Hazelwood</div>
-                        <div class="avaliacao">Nota: ★★★★☆</div>
-                        <div class="dica-clique">✨ Clique para ler a resenha completa</div>
-                    </div>
-                </summary>
-                <div class="texto-resenha">
-                    <p>Escreva aqui a resenha do livro 3.</p>
-                </div>
-            </details>
+<details class="card-livro">
+<summary class="resumo-livro">
+<img class="capa" src="imagens/umcasoperdido.jpeg" alt="Capa de Um caso perdido">
+<div class="info-basica">
+<h3 class="titulo-livro">Um caso perdido</h3>
+<div class="autor-livro">Colleen Hoover</div>
+<div class="avaliacao">Nota: ★★★★★</div>
+<div class="dica-clique">✨ Clique para ler a resenha</div>
+</div>
+</summary>
+<div class="texto-resenha"><p>Escreva aqui a resenha do livro.</p></div>
+</details>
 
-            <details class="card-livro">
-                <summary class="resumo-livro">
-                    <img class="capa-livro" src="https://via.placeholder.com/100x150" alt="Capa do livro 4">
-                    <div class="info-basica">
-                        <h3 class="titulo-livro">Depois Daquele Verão</h3>
-                        <div class="autor-livro">Autor: Nome do Autor</div>
-                        <div class="avaliacao">Nota: ★★★★☆</div>
-                        <div class="dica-clique">✨ Clique para ler a resenha completa</div>
-                    </div>
-                </summary>
-                <div class="texto-resenha">
-                    <p>Escreva aqui a resenha do livro 4.</p>
-                </div>
-            </details>
+<details class="card-livro">
+<summary class="resumo-livro">
+<img class="capa" src="imagens/caidaporvoce.jpeg" alt="Capa de Caída por você">
+<div class="info-basica">
+<h3 class="titulo-livro">Caída por você</h3>
+<div class="autor-livro">Amy Lea</div>
+<div class="avaliacao">Nota: ★★★★☆</div>
+<div class="dica-clique">✨ Clique para ler a resenha</div>
+</div>
+</summary>
+<div class="texto-resenha"><p>Escreva aqui a resenha do livro.</p></div>
+</details>
 
-            <details class="card-livro">
-                <summary class="resumo-livro">
-                    <img class="capa-livro" src="https://via.placeholder.com/100x150" alt="Capa do livro 5">
-                    <div class="info-basica">
-                        <h3 class="titulo-livro">Extraordinário</h3>
-                        <div class="autor-livro">Autor: R.J Palacio</div>
-                        <div class="avaliacao">Nota: ★★★★☆</div>
-                        <div class="dica-clique">✨ Clique para ler a resenha completa</div>
-                    </div>
-                </summary>
-                <div class="texto-resenha">
-                    <p>Escreva aqui a resenha do livro 5.</p>
-                </div>
-            </details>
+<details class="card-livro">
+<summary class="resumo-livro">
+<img class="capa" src="imagens/amorteoricamente.jpg" alt="Capa de Amor, Teoricamente">
+<div class="info-basica">
+<h3 class="titulo-livro">Amor, Teoricamente</h3>
+<div class="autor-livro">Ali Hazelwood</div>
+<div class="avaliacao">Nota: ★★★★☆</div>
+<div class="dica-clique">✨ Clique para ler a resenha</div>
+</div>
+</summary>
+<div class="texto-resenha"><p>Em Amor, Teoricamente acompanhamos Elsie Hannaway, uma física teórica que divide seu tempo entre a carreira acadêmica e seu trabalho como namorada de mentira. Tudo começa a ficar complicado quando ela conhece Jack Smith, um físico experimental que, além de ser seu rival no meio acadêmico, também faz parte do processo seletivo para o emprego que ela tanto cobiça.
 
-            <details class="card-livro">
-                <summary class="resumo-livro">
-                    <img class="capa-livro" src="https://via.placeholder.com/100x150" alt="Capa do livro 6">
-                    <div class="info-basica">
-                        <h3 class="titulo-livro">A empregada</h3>
-                        <div class="autor-livro">Autor: Freida Mcfadden</div>
-                        <div class="avaliacao">Nota: ★★★★☆</div>
-                        <div class="dica-clique">✨ Clique para ler a resenha completa</div>
-                    </div>
-                </summary>
-                <div class="texto-resenha">
-                    <p>Escreva aqui a resenha do livro 6.</p>
-                </div>
-            </details>
+    Gostei muito da Elsie como protagonista. Ela é divertida, inteligente e tem uma personalidade muito fácil de acompanhar. Por estar sempre tentando agradar as pessoas e se adaptar ao que esperam dela, acaba esquecendo quem realmente é. Durante a história, é muito interessante acompanhar seu processo de se conhecer melhor e aprender que não precisa mudar para ser aceita.
+    Jack também foi um dos meus personagens favoritos. Apesar de parecer mais fechado e sério no começo, ele se mostra carinhoso, sincero e muito seguro do que sente. A relação entre os dois é cheia de provocações, química e momentos fofos, e gostei bastante de acompanhar como ele ajuda Elsie a sair da sua zona de conforto.
+    
+    Outro ponto que gostei bastante foi a forma como Ali Hazelwood aborda o mundo acadêmico e científico, principalmente as dificuldades enfrentadas pelas mulheres nesse ambiente. A rivalidade entre físicos teóricos e experimentais também deixa a história ainda mais divertida.
+    No geral, achei uma leitura leve, divertida e romântica, com personagens cativantes e uma ótima química entre o casal. Foi uma história que me deixou querendo conhecer mais livros da autora.
+    </p></div>
+</details>
 
-            <details class="card-livro">
-                <summary class="resumo-livro">
-                    <img class="capa-livro" src="https://via.placeholder.com/100x150" alt="Capa do livro 7">
-                    <div class="info-basica">
-                        <h3 class="titulo-livro">Um de nós está mentindo</h3>
-                        <div class="autor-livro">Autor: Karen M.McManus</div>
-                        <div class="avaliacao">Nota: ★★★★☆</div>
-                        <div class="dica-clique">✨ Clique para ler a resenha completa</div>
-                    </div>
-                </summary>
-                <div class="texto-resenha">
-                    <p>Escreva aqui a resenha do livro 7.</p>
-                </div>
-            </details>
+<details class="card-livro">
+<summary class="resumo-livro">
+<img class="capa" src="imagens/depoisdaqueleverao.jpg" alt="Capa de Depois Daquele Verão">
+<div class="info-basica">
+<h3 class="titulo-livro">Depois Daquele Verão</h3>
+<div class="autor-livro">Nome do Autor</div>
+<div class="avaliacao">Nota: ★★★★☆</div>
+<div class="dica-clique">✨ Clique para ler a resenha</div>
+</div>
+</summary>
+<div class="texto-resenha"><p>Na adolescencia, Percy ia com seus pais todo ano para a casa à beira do lago, um lugar onde o tempo desacelera e os conflitos ficam para depois. No chalé, ela costumava passar seus dias nadando nas águas tranquilas e compartilhando momentos com seu vizinho, Sam, que ao longo dos anos foi se tornando seu melhor amigo. À medida que os dois amadureceram e entraram na adolescência, sentimentos mais profundos surgiram. No entanto, algo complicado os separa, Percy vai viver sua vida bem longe e doze anos se passam sem nenhum contato.
 
-        </section>
-    </main>
+    O livro está entre o presente e o passado, revelando como Percy e Sam se conheceram e construíram sua amizade. As cenas ambientadas no passado são nostálgicas e confortáveis, transportando o leitor para anos atrás. Enquanto os momentos presentes exigem mais responsabilidade de ambos.
+    Esse romance é um exemplo que coisas mal resolvidas não somem. É uma narrativa boa, poderia ser mais bem organizada, principalmente pela normalização de problemas graves, más é uma boa opção de leitura. A curiosidade cresce todos os capítulos, porque ninguém sabe o motivo de Sam e Percy terem terminado de vez. E finalmente, no final é revelado coisas ocultas, que podem mudar pra sempre o futuro deles.</p></div>
+</details>
 
-    <footer>
-        <p>© 2026 • Olá Gostaria De Um Livro • Todos os direitos reservados.</p>
-    </footer>
+</main>
+
+<footer>© 2026 • Olá, Gostaria de um Livro</footer>
+
 </body>
 </html>
